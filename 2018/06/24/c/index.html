@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="C语言," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="C语言基础知识 每个 C 程序有且只有一个主函数 main()，且程序必须从 main()函数开始执行，并在 main()函数中结束。  在 C 语言中，用 e 来表示科学计数法时，规定在 e 的前面必须有数字，后面必须为整数。  用单引号括起来的一个字符常量只能存放一个字符； C 语言中没有字符串变量，只能用字符数组来存储字符串。  外部变量在编译时由系统分配永久的内存空间，所以外部变量的类型不">
+<meta name="keywords" content="C语言">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C语言基础知识">
+<meta property="og:url" content="http://yoursite.com/2018/06/24/c/index.html">
+<meta property="og:site_name" content="咚咚锵的蜕变痕迹">
+<meta property="og:description" content="C语言基础知识 每个 C 程序有且只有一个主函数 main()，且程序必须从 main()函数开始执行，并在 main()函数中结束。  在 C 语言中，用 e 来表示科学计数法时，规定在 e 的前面必须有数字，后面必须为整数。  用单引号括起来的一个字符常量只能存放一个字符； C 语言中没有字符串变量，只能用字符数组来存储字符串。  外部变量在编译时由系统分配永久的内存空间，所以外部变量的类型不">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-06-24T08:50:24.580Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C语言基础知识">
+<meta name="twitter:description" content="C语言基础知识 每个 C 程序有且只有一个主函数 main()，且程序必须从 main()函数开始执行，并在 main()函数中结束。  在 C 语言中，用 e 来表示科学计数法时，规定在 e 的前面必须有数字，后面必须为整数。  用单引号括起来的一个字符常量只能存放一个字符； C 语言中没有字符串变量，只能用字符数组来存储字符串。  外部变量在编译时由系统分配永久的内存空间，所以外部变量的类型不">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/06/24/c/"/>
+
+
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "a453f6a8"
+    });
+  daovoice('update');
+  </script>
+
+
+  <title>C语言基础知识 | 咚咚锵的蜕变痕迹</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">咚咚锵的蜕变痕迹</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">只为记录，不为炫耀</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-insist">
+          <a href="/insist/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-fa"></i> <br />
+            
+            坚持
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/24/c/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="咚咚锵">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/doraemon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咚咚锵的蜕变痕迹">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">C语言基础知识</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-24T16:28:12+08:00">
+                2018-06-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+	
+    <div class="post-body" itemprop="articleBody">
+	
+
+	
+      
+      
+
+      
+        <h1 id="C语言基础知识"><a href="#C语言基础知识" class="headerlink" title="C语言基础知识"></a>C语言基础知识</h1><ol>
+<li><p>每个 C 程序有且只有一个主函数 main()，且程序必须从 main()函数开始执行，并在 main()函数中结束。</p>
+</li>
+<li><p>在 C 语言中，用 e 来表示科学计数法时，规定在 e 的前面必须有数字，后面必须为整数。</p>
+</li>
+<li><p>用单引号括起来的一个字符常量只能存放一个字符； C 语言中没有字符串变量，只能用字符数组来存储字符串。</p>
+</li>
+<li><p>外部变量在编译时由系统分配永久的内存空间，所以外部变量的类型不是自动存储类别。</p>
+</li>
+<li><p>在一个函数内的复合语句中定义的变量，只能在这个复合语句范围内有效。</p>
+</li>
+<li><p>用 sizeof(int)计算 int 类型数据的字节数。</p>
+</li>
+<li><p>C语言运行时，首先系统检查语法的正误， 再运行程序的语法；Ｃ语言中，可以在一个函数中嵌套一个函数， 但是不能在一个函数中定义一个函数 ；只有在函数外部定义的函数才是外部函数；Ｃ语言的子程序有过程和函数两种。</p>
+</li>
+<li><p>预处理命令行的位置没有规定，只是习惯放在前面；在源文件中的可以有多条预处理命令，但一行只能写一条；宏名的大写只是习惯性的表示；宏替换不仅不占用运行时间还不分配内存空间。</p>
+</li>
+<li><p>函数的作用是检查文件是否结束，当结束时返回的值为非零，否则为零。</p>
+</li>
+<li><p>当定义了数组后，在给其赋值时，不能直接把字符串赋给数组名。</p>
+</li>
+<li><p>在赋值表达式中，赋值运算符“＝”右侧不能为表达式；在求余运算符中的两侧都必须为整型；在强制类型转换时，类型名应用括号括起来。</p>
+</li>
+<li><p>静态局部变量，只有当程序结束后，其值才释放。</p>
+</li>
+<li><p>当调用函数时，实参是一个数组名，则向函数传送的是数组每一个元素的地址。</p>
+</li>
+<li><p>算法的特点为有零个或多个输入，有一个或多个输出，当相同的输入时，其结果相同；算法正确的程序最终一定会结束</p>
+</li>
+<li><p>在 C 语言中，预处理命令行都以“ #”开头；当需要时才用#include&lt;stdio. h&gt;;预处理的作用就是实现宏定义和条件编译。</p>
+</li>
+<li><p>当数组元素的下标超出了定义的下标范围时， 系统不给出“下标越界”的字样，而是得出错误的答案，因此在编程时务必检查下标是否越界。</p>
+</li>
+<li><p>共用体变量不能作为函数的参数，也不能使函数带回共用体变量。</p>
+</li>
+<li><p>指向函数的指针变量的定义形式为：数据类型 （*指针变量）（）； ，因此其为指向函数的指针变量。</p>
+</li>
+<li><p>用 C 语言编写的代码程序是源程序，只有通过编译、连接才能进行。</p>
+</li>
+<li><p>在说明为 static 时，其生存期得到延长， 而其作用域并没有改变，在定义后系统会自动帮它赋值为 0，static 为关键字不能被用作它用。</p>
+</li>
+<li><p>频繁地使用空语句会降低程序的可读性和运算速度。</p>
+</li>
+<li><p>运算符 %两边都应是整数，赋值语句左边应该是变量，而非表达式，强制转换语句强制类型应加括号。</p>
+</li>
+<li><p>在逻辑运算符中，其两侧的运算符对象为任意合法的表达式即可。</p>
+</li>
+<li><p>函数 fread（&amp;Iarray ，2,16，fp）的功能是，从 fp 所指的数据文件中读取 16 次 2 字节的数据存储到数组 Iarray 中。</p>
+</li>
+<li><p>整个流式文件也可以随机存取数据， C 语言文件中有好多函数可以达到写入数据时，未经输入数据，达到不覆盖的目的，在进行写操作时，系统会自动关闭文件。</p>
+</li>
+<li><p>使用 putchar、getchat、puts、gets、printf 、scanf 函数时，必须在程序的开头出现包含头文件 #include ”stdio. h ”的命令行，而使用字符串处理函数时，必须在程序的开头出现包含头文件#include ”string. h ”命令行，而使用数学函数时，必须在程序的开头出现包含头文件 #include ”math. h”的命令行。</p>
+</li>
+<li><p>一个斜杠与小于等于 127 任意数字按一个字符计算，一个斜杠与任意一个字符按一个字符计算。</p>
+</li>
+<li><p>一个 C 程序可以有一个或多个程序文件，也可以有一个或多个函数，所以一个 C 语言程序可以实现多种算法。</p>
+</li>
+<li><p>根据 C 语言规定，注释语句可以换行写，并且一个“ /<em>”和其后紧跟的第一个“ </em>/”中间的部分是注释内容，且注释内容不参与程序的运行。 例如：b=0; /<em>b=20; 给 b 赋值</em>/ 则 b=0； 。</p>
+</li>
+<li><p>sizeof 是求字节数的运算符，包括 ‘\0’，而 strlen 是求字符串的实际长度的函数，不包括‘ \0’，以‘ \0’作为结束。</p>
+</li>
+<li><p>在函数声明时，其中的形参变量、个数、函数的类型必须一致。</p>
+</li>
+<li><p>C 语言源程序经编译后生成后缀为 . obj 的目标程序；C 程序经过编译、连接步骤之后才能形成一个真正可执行的二进制机器指令文件；用 C 语言编写的程序称为源程序，它以 ASCII代码形式存放在一个文本文件中。并不是源程序中的所有行都参加编译。在条件编译形式下，相关内容只在满足一定条件时才进行编译。</p>
+</li>
+<li><p>switch 括号后的表达式可以使任何表达式； case后的表达式必须是常量表达式，常量表达式中不能出现变量，且类型必须是整数、字符型或枚举型。</p>
+</li>
+<li><p>C 程序必须由一个或一个以上的函数组成；函数调用可以作为一个独立的语句存在；若函数有返回值，必须通过 return语句返回。</p>
+</li>
+<li><p>在 C 语言中，数据只能从实参单向传递给形参， 称为“按值”传递。【在实参传递到形参时， 是数值传递， 而不是地址传递，形参中值的改变不会影响实参中的值。 】</p>
+</li>
+<li><p>可以用 typedef 声明新的类型名来代替已有的类型名， 而不能增加新的类型。</p>
+</li>
+<li><p>在没有限制输出宽度时，一般浮点数的小数位数是 6 位，不管输出格式是 %f 或 lf% 均如此。</p>
+</li>
+<li><p>C 语言中，函数的隐含存储类别是无存储类别。</p>
+</li>
+<li><p>当实参传递到形参时，地址传递时形参的改变影响实参。</p>
+</li>
+<li><p>串的长度指的是串中的字符的个数， 且其字符个数可以为零。</p>
+</li>
+<li><p>C 语言中数据类型有整型、实型、字符型等，实行数据分为单精度型和双精度型两种。</p>
+</li>
+<li><p>整型数组只能一个一个地输入或输出，而在字符型数组中可以对字符串整体地输入与输出。</p>
+</li>
+<li><p>C 语言中，文件型指针变量的定义形式为： FILE *文件型指针名； 。C 语言中对二进制文件的访问速度比文本文件快； C语言中，随机文件以二进制代码形式存储数据； C 语言中的文本文件以 ASCII 码形式存储数据。</p>
+</li>
+<li><p>因为#define 是宏定义的标志，而不是 C 语句，而 printf 是输出函数，因此其是 C 语句。</p>
+</li>
+<li><p>在实参传递给形参时，地址传递时能够改变，而数值传递时则不变。</p>
+</li>
+<li><p>在 scanf函数中， 必须含有输入项， 并且需含有与之一一对应的转换说明符， 在 scanf函数的格式字符前可以加入一个正整数指定输入数据的宽度，但不可以实数指定小数位的宽度，输入项是地址表达式。</p>
+</li>
+<li><p>switch 语句使用注意事项： （1）switch 语句与 if 语句不同，仅能判断一种关系：是否恒等； （2）switch 语句中 case子句的常量可以使整型常量、字符型常量、枚举型数据，或是整型常量表达式，不允许变量； （3）在同一个 switch 中， case子句的常量不能相同，在嵌套的 switch 语句中，不同层次的switch 之间，可有相同的常量； （4）default 子句可以省略。例如： default：printf（“E\n”）；（5）case和 default 子句只能在switch 语句中使用，且 case和 default 只起标号作用，可出现在 switch 中的任何位置；（6）case和 default 子句后面的语句序列允许由多个可执行语句组成，且不必用“ {} ”括起来，也可以为空语句；（7）switch 语句中可省略 break语句，但省略后会改变流程。</p>
+</li>
+<li><p>break 语句是限定转向语句，它使流程跳出所在的结构，把流程转向所在结构之后。 continue 语句被称为继续语句。该语句的功能是使本次循环提前结束， 即跳过循环体中 continue 语句后面尚未执行的循环体语句，继续进行下一次循环的条件判别。</p>
+</li>
+<li><p>在 C 语言中，一个程序必须有一个 main（）函数，但是其文件就不一定，因为其可以通过链接来实现多个子函数放到这个主函数中，主函数的位置是不固定的，可以根据自己的爱好和习惯来使用，在 C 语言中任何函数都不能调用主函数，且与函数的位置有关。 在 C 程序的函数中不能定义另一个函数。</p>
+</li>
+<li><p>在用 fprintf 输入时，要将其转换为二进制数形式放到文件中。</p>
+</li>
+<li><p>由 C 语言构成的指令序列称为 C 源程序，源程序文件的后缀为“ . c”。而目标程序为“ . obj”，可执行程序为“ . exe”。</p>
+</li>
+<li><p>在 C 语言中，合法的标识符可以由字母、 数字和下划线组成，且第一个字符必须为字母或下划线。</p>
+</li>
+<li><p>C 语言规定必须以 main 作为主函数名。 程序要从 main（）函数开始执行，最后在 main（）函数中结束。</p>
+</li>
+<li><p>赋值运算符左侧的操作数必须是一个变量。</p>
+</li>
+<li><p>在 C 语言中，函数的实参单元与形参单元在内存中分配不同的存储单元。</p>
+</li>
+<li><p>在一个 C 语言源程序文件中所定义的全局变量， 其作用域为：由具体定义位置和 extern 说明来决定范围。【全局变量是在函数外部任意位置上定义的变量，它的作用域是从变量定义的位置开始，到整个源文件结束止。当全局变量定义在后，引用它的函数在前时，应该在引用它的函数中用 extern 对此全局变量进行说明，以便通知编译程序该变量是一个已在外部定义了的全局变量，这时全局变量的作用域从 extern 说明处起，延伸到该函数末尾。 】</p>
+</li>
+<li><p>C 语言中，凡是以“ #”号开头的行，都成为“编译预处理” 。对 C 原程序进行编译前，由编译预处理程序对这些变异预处理命令进行处理。</p>
+</li>
+<li><p>typedef 语句的作用仅仅是用“标识符”来表示已存在的“类型名”，并未产生新的数据类型。</p>
+</li>
+<li><p>共用体变量中的所有成员共享一段公共存储区，所有成员的首地址相同。在每一个时刻所有的成员中只有一个有效，即只有最后一个被赋值的成员有效，其余的成员无效。</p>
+</li>
+<li><p>C 语言中注释可以出现在任意位置； C 语言一行内可以写多个语句，一个语句可以写在多行上； C 语言编写的程序可以放在多个程序文件中。</p>
+</li>
+<li><p>标识符只能由数字、字母和下划线组成，并且只能以字母和下划线开头。</p>
+</li>
+<li><p>在用基本输出语句 printf 时，格式说明与输出项的个数应该相同。如果格式说明的个数少于输出项的个数，多余的输出项不予输出，如果格式说明个数多余输出项个数，则对于多余的格式项输出不定制或 0。</p>
+</li>
+<li><p>二维数组定义和初始化允许省略行下标， 不允许省略列下标。</p>
+</li>
+<li><p>预处理命令行是在系统对原程序进行编译之前进行处理的，不是在程序执行的过程中。</p>
+</li>
+<li><p>gets和 getchar函数用于从标准输入设备终端读入字符串和字符，并非从磁盘文件读入。</p>
+</li>
+<li><p>动态变量和静态变量都是内存变量，而寄存器变量不保存在内存上，而是直接存储在 CPU 的寄存器中。变量的存储类别有自动、静态、寄存器、外部。</p>
+</li>
+<li><p>C 语言的源程序是由函数构成的，其基本单位是函数，每一个函数完成相对独立的功能， 其中至少包括一个主函数； C 语言的书写格式自由，一行可写多条语句，一条语句也可写在不同行上；C 语言规定每个语句以分号结束。 可随时添加注释，对程序没影响。</p>
+</li>
+<li><p>由高级语言编写的程序称为“源程序” ，由二进制代码表示的程序称为“目标程序” 。由汇编语言编写的程序称为“汇编程序”。对于计算机本身来说，它只能接收和处理由 0 到 1 的代码构成的二进制指令和数据。 所以计算机能识别的程序是 “目标程序”。而计算机可以直接执行的是可执行程序，即后缀为. exe的程序。</p>
+</li>
+<li><p>C 语言源程序 不能表示二进制，她 在 C 语言中，所有的数值型常量都带有符号，所以整型数量只区别整型和长整型两种形式，整型常量和长整型常量均可用十进制、八进制、十六进制 3 种形式表示。</p>
+</li>
+<li><p>宏名没有大小写限制。宏定义可以放在程序中的任何位置，其有效范围是从定义开始到文件结束。宏代换可以代替任何数据类型，不受数据类型的限制。 函数 影响运行时间 ，宏调用影响编译时间 。</p>
+</li>
+<li><p>字符数组可以只存放普通字符，不存放字符串。此时该字符数组没有存放结束标志‘ \0’。</p>
+</li>
+<li><p>文件由 数据序列 组成，可以构成二进制文件或文本文件。</p>
+</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+	
+	<div>
+      
+        ﻿
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2018/06/24/c/">C语言基础知识</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 咚咚锵 的个人博客">咚咚锵</a></p>
+  <p><span>发布时间:</span>2018年06月24日 - 16:06</p>
+  <p><span>最后更新:</span>2018年06月24日 - 16:06</p>
+  <p><span>原始链接:</span><a href="/2018/06/24/c/" title="C语言基础知识">http://yoursite.com/2018/06/24/c/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/06/24/c/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">咚咚锵-非商业性使用</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+	});
+    });  
+</script>
+
+      
+	</div>
+	
+	
+	<div>
+	  
+		﻿<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+	  
+	</div>
+	
+	
+	
+    <footer class="post-footer">
+      
+        <div class="post-tags" style="float:left;">
+          
+            <a href="/tags/C语言/" rel="tag"><i class="fa fa-tag"></i> C语言</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/12/6—-11-problen/" rel="next" title="2018年6月11博客自动化问题">
+                <i class="fa fa-chevron-left"></i> 2018年6月11博客自动化问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNzExMi8xMzY0OA"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/doraemon.jpg"
+                alt="咚咚锵" />
+            
+              <p class="site-author-name" itemprop="name">咚咚锵</p>
+              <p class="site-description motion-element" itemprop="description">行百里者半九十</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C语言基础知识"><span class="nav-number">1.</span> <span class="nav-text">C语言基础知识</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+		
+		
+		
+		<script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+		<script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+		<div class="widget-wrap">
+		<h3 class="widget-title">标签云</h3>
+		<div id="myCanvasContainer" class="widget tagcloud">
+			<canvas width="250" height="250" id="resCanvas" style="width=100%">
+				<ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C语言/">C语言</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo-admin/">Hexo admin</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fenkins/">fenkins</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/心情/">心情</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/感悟/">感悟</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/成长/">成长</a><span class="tag-list-count">1</span></li></ul>
+			</canvas>
+		</div>
+		</div>
+		
+
+		
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">咚咚锵</span>
+
+  
+</div>
+
+
+
+<!--
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+ -->
+
+
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!--崩溃欺骗-->
+<script type="text/javascript" src="/js/src/bk.js"></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":95,"height":150},"mobile":{"show":false}});</script></body>
+
+</html>
