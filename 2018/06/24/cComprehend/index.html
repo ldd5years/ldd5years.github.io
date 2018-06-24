@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="咚咚锵的蜕变痕迹">
 <meta property="og:description" content="C 语言基础——个人理解版 C程序 只有一个main  从main start  从 main end  e 前面必须有数字  后面必须为整数  栗子：int a = 2e4;  ‘’  只能放一个字符       C中没有 JAVA中的String 字符串只能用字符数组来储存  外部变量 编译后会分配永久内存  外部变量 ！ 自动存储类别 存储类型  局部变量和外部变量  复合语句中的变量  相">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-24T11:49:13.931Z">
+<meta property="og:updated_time" content="2018-06-24T16:13:36.617Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C 语言基础——个人理解版">
 <meta name="twitter:description" content="C 语言基础——个人理解版 C程序 只有一个main  从main start  从 main end  e 前面必须有数字  后面必须为整数  栗子：int a = 2e4;  ‘’  只能放一个字符       C中没有 JAVA中的String 字符串只能用字符数组来储存  外部变量 编译后会分配永久内存  外部变量 ！ 自动存储类别 存储类型  局部变量和外部变量  复合语句中的变量  相">
@@ -441,10 +441,32 @@
 </tbody>
 </table>
 <ol start="7">
+<li><p>C语言运行时  先检测语法  再 运行  可以  函数中嵌套函数 但是 不能在函数中定义函数  在函数外部定义的才是外部函数  C语言的子程序由函数组成，过程不是C语言的组成部分 </p>
+</li>
 <li><p>预处理  位置不定  大小写不定  默认为 前面 和 大写    一行一条  宏替换 不占运行时间 和 内存空间</p>
 </li>
-<li><p>feof函数 检测是否结束 返回0/1</p>
+<li><p>feof函数 feof用检测流上的文件结束符 结束返回 ！ 0  否则  返回  0  <a href="https://blog.csdn.net/lhyer/article/details/45012233" target="_blank" rel="noopener">C语言中feof的使用</a></p>
 </li>
+<li><p>只能是利用循环 对你数组进行赋值  不能直接赋值</p>
+</li>
+<li><p>在赋值表达式中，赋值运算符“＝”右侧不能为表达式；在求余运算符中的两侧都必须为整型；在强制类型转换时，类型名应用括号括起来。</p>
+</li>
+<li><p>静态局部变量相当于全局变量（只是只有在这个函数中能访问，但是生命周期是和全局变量差不多的  只有当程序结束后，其值才释放），函数退出之后变量还在，而且只在第一次进入的时候做初始化，以后会跳过初始化语句，保留原来的值</p>
+</li>
+<li><p>调用函数 实参是数组时  向函数传送的是数组首地址   <a href="https://zhidao.baidu.com/question/456024137411160605.html" target="_blank" rel="noopener">当调用函数时，实参是一个数组名，则向函数传送的是</a></p>
+</li>
+<li><p>C语言算法有如下特性：</p>
+</li>
+</ol>
+<ul>
+<li>有穷性：一个算法应包含有限的操作步骤而不能是无限的。</li>
+<li>确定性：算法中每一个步骤应当是确定的，而不能应当是含糊的、模棱两可的。</li>
+<li>有零个或多个输入。</li>
+<li>有一个或多个输出。</li>
+<li>有效性：算法中每一个步骤应当能有效地执行，并得到确定的结果。</li>
+</ul>
+<ol start="15">
+<li>预处理命令行都以“ #”开头</li>
 </ol>
 
       
@@ -472,7 +494,7 @@
   <p><span>本文标题:</span><a href="/2018/06/24/cComprehend/">C 语言基础——个人理解版</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 咚咚锵 的个人博客">咚咚锵</a></p>
   <p><span>发布时间:</span>2018年06月24日 - 19:06</p>
-  <p><span>最后更新:</span>2018年06月24日 - 19:06</p>
+  <p><span>最后更新:</span>2018年06月25日 - 00:06</p>
   <p><span>原始链接:</span><a href="/2018/06/24/cComprehend/" title="C 语言基础——个人理解版">http://yoursite.com/2018/06/24/cComprehend/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/06/24/cComprehend/"  aria-label="复制成功！"></i></span>
   </p>
