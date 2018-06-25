@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="咚咚锵的蜕变痕迹">
 <meta property="og:description" content="C 语言基础——个人理解版 C程序 只有一个main  从main start  从 main end  e 前面必须有数字  后面必须为整数  栗子：int a = 2e4;  ‘’  只能放一个字符       C中没有 JAVA中的String 字符串只能用字符数组来储存  外部变量 编译后会分配永久内存  外部变量 ！ 自动存储类别 存储类型  局部变量和外部变量  复合语句中的变量  相">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-24T16:13:36.617Z">
+<meta property="og:updated_time" content="2018-06-25T16:31:14.689Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C 语言基础——个人理解版">
 <meta name="twitter:description" content="C 语言基础——个人理解版 C程序 只有一个main  从main start  从 main end  e 前面必须有数字  后面必须为整数  栗子：int a = 2e4;  ‘’  只能放一个字符       C中没有 JAVA中的String 字符串只能用字符数组来储存  外部变量 编译后会分配永久内存  外部变量 ！ 自动存储类别 存储类型  局部变量和外部变量  复合语句中的变量  相">
@@ -466,8 +466,210 @@
 <li>有效性：算法中每一个步骤应当能有效地执行，并得到确定的结果。</li>
 </ul>
 <ol start="15">
-<li>预处理命令行都以“ #”开头</li>
+<li>预处理命令行都以“ #”开头  </li>
 </ol>
+<ul>
+<li>宏定义  不占时间  不占空间</li>
+<li>条件编译  符合条件即编译  不符合条件即不编译  压缩大小程序</li>
+<li>提高可移植性  增加灵活性</li>
+</ul>
+<ol start="16">
+<li><p>数组超出 不报 下标越界  自行注意  检查</p>
+</li>
+<li><p>共用体变量不能作为函数的参数，也不能使函数带回共用体变量。 <a href="https://zhidao.baidu.com/question/488505406.html" target="_blank" rel="noopener">c语言中的共用体是什么？</a></p>
+</li>
+</ol>
+<ul>
+<li>结构体类型所占的内存空间为其各成员所占存储空间之和。</li>
+<li>而形同结构体的共用体类型实际占用存储空间为其最长的成员所占的存储空间。 </li>
+</ul>
+<ol start="18">
+<li><p>数据类型 （*指针变量名）（函数参数列表） <a href="https://www.cnblogs.com/zxl2431/archive/2011/03/25/1995285.html" target="_blank" rel="noopener">指向函数的指针</a>  （不太懂）</p>
+</li>
+<li><p>用 C 语言编写的代码程序是源程序 ； C语言一种高级语言，C语言源程序经过C语言编译程序编译之后，生成一个后缀为。OBJ的二进制文件(称为目标文件)，最后还要由称为“连接程序”(Link)的软件，把此。OBJ文件与C语言提供的各种库函数连接在一起，生成一个后缀．EXE的可执行文件。</p>
+</li>
+<li><p>静态局部变量  </p>
+</li>
+</ol>
+<ul>
+<li>局部变量声明为static后，生存期延长：离开局部时，局部变量的值会保存，下次再回到局部时可以读取保存的值。</li>
+<li>全局变量声明为static后，作用域非但没有扩大，反而缩小，只能在所在的文件内使用。</li>
+<li>静态变量默认初始化为0</li>
+<li>局部变量可以使用static, 形参不能</li>
+</ul>
+<ol start="21">
+<li></li>
+</ol>
+<ul>
+<li>空语句是指只有一个分号的语句。例如，下面是一个空语句：</li>
+<li>；</li>
+<li>空语句不产生任何操作运算，只是出于语法上的需要，在某些必需的场合占据一个语句的位置。例如：for  ( i=1; i&lt;100; i++)   ;</li>
+<li>纯粹消耗CPU时间，起到延时的作用，但是注意一下，”雨落深山”说的有问题的，在嵌入式系统中一般不会这么用</li>
+<li>会降低程序的可读性</li>
+</ul>
+<ol start="22">
+<li><p>运算符 %两边都应是整数，而非小数，赋值语句左边应该是变量，而非表达式，强制转换语句强制类型应加括号。</p>
+</li>
+<li><p>可以是任意合法的表达式 不可以是结构体类型的数据 <a href="https://www.shangxueba.com/ask/5978105.html" target="_blank" rel="noopener">以下关于逻辑运算符两侧运算对象的叙述中正确的是</a></p>
+</li>
+</ol>
+<p>24.函数 fread（&amp;Iarray ，2,16，fp）的功能是，从 fp 所指的数据文件中读取 16 次 2 字节的数据存储到数组 Iarray 中。</p>
+<p>fread</p>
+<ul>
+<li>　　功 能: 从一个流中读数据</li>
+<li>　　函数原型: size_t fread(void <em>buffer,size_t size,size_t count,FILE </em>stream);　</li>
+<li>　　参 数：</li>
+<li>　　1.用于接收数据的地址（指针）（buffer）</li>
+<li>　　2.单个元素的大小（size）：单位是字节而不是位，例如读取一个int型数据就是4个字节</li>
+<li>　　3.元素个数（count）</li>
+<li>　　4.提供数据的文件指针（stream）</li>
+<li>　　返回值：读取的元素的个数 </li>
+</ul>
+<ol start="25">
+<li><p>整个流式文件也可以随机存取数据， C语言文件中有好多函数可以达到写入数据时，未经输入数据，达到不覆盖的目的，在进行写操作时，系统会自动关闭文件。</p>
+</li>
+<li><p>使用 函数需要 头文件的支持</p>
+</li>
+<li><p>一个斜杠与小于等于 127 任意数字按一个字符计算，一个斜杠与任意一个字符按一个字符计算。（不太懂）</p>
+</li>
+<li><p>一个 C 程序可以有一个或多个程序文件，也可以有一个或多个函数，所以一个 C 语言程序可以实现多种算法。 只能有一个main函数</p>
+</li>
+<li><p>释语句可以换行写 例如：b=0; /b=20; 给 b 赋值/   则 b=0； 。 （我测试总是报错  不知原因）</p>
+</li>
+<li><p>C语言中 有 sizeof()、strlen() 没有length()、size()</p>
+</li>
+</ol>
+<ul>
+<li>数组或字符串的长度:sizeof()、strlen()</li>
+<li>1、sizeof():返回所占总空间的字节数</li>
+<li>（1）、对于整型字符型数组</li>
+<li>（2）、对于整型或字符型指针</li>
+<li>2、strlen():返回字符数组或字符串所占的字节数</li>
+<li>（1）、针对字符数组</li>
+<li>（2）、针对字符指针</li>
+<li>（3）、从开始到遇到第一个’\0’结束</li>
+</ul>
+<ol start="31">
+<li><p>在函数声明时，其中的形参变量、个数、函数的类型必须一致。</p>
+</li>
+<li></li>
+</ol>
+<ul>
+<li>C 语言源程序经编译后生成后缀为 . obj </li>
+<li>C 程序经过编译、连接 形成一个真正可执行的二进制机器指令文件</li>
+<li>源程序，它以 ASCII代码形式存放在一个文本文件中</li>
+<li>不是源程序中的所有行都参加编译。在条件编译形式下，相关内容只在满足一定条件时才进行编译。</li>
+</ul>
+<ol start="33">
+<li><p>witch 括号后的表达式可以使任何表达式  case后必须是常量表达式，不能出现变量，且类型必须是整数、字符型或枚举型。</p>
+</li>
+<li><p>C 程序必须由一个或一个以上的函数  函数调用  可作为一个独立的语句存在 函数有返回值，必须通过 return语句返回。</p>
+</li>
+<li></li>
+</ol>
+<ul>
+<li>值传递：</li>
+<li>形参是实参的拷贝，改变形参的值并不会影响外部实参的值。从被调用函数的角度来说，值传递是单向的（实参-&gt;形参），参数的值只能传入，不能传出。当函数内部需要修改参数，并且不希望这个改变影响调用者时，采用值传递。</li>
+<li>指针传递：</li>
+<li>形参为指向实参地址的指针，当对形参的指向操作时，就相当于对实参本身进行的操作</li>
+<li>引用传递：<br>形参相当于是实参的“别名”，对形参的操作其实就是对实参的操作，在引用传递过程中，被调函数的形式参数虽然也作为局部变量在栈中开辟了内存空间，但是这时存放的是由主调函数放进来的实参变量的地址。被调函数对形参的任何操作都被处理成间接寻，即通过栈中存放的地址访问主调函数中的实参变量。正因为如此，被调函数对形参做的任何操作都影响了主调函数中的实参变量。</li>
+<li><a href="https://www.cnblogs.com/yanlingyin/archive/2011/12/07/2278961.html" target="_blank" rel="noopener">C++ 值传递、指针传递、引用传递详解</a></li>
+<li>一般来数参数的传递是值传递，也就是说实参传给形参，形参发生改变时实参并不会改变，（单向）但是数组在传递的时候是地址传递，只要形参发生了变化，实参也会发生变化（双向）。</li>
+<li><a href="https://blog.csdn.net/Laoynice/article/details/79196993" target="_blank" rel="noopener">C语言数组当参数传递</a></li>
+</ul>
+<ol start="36">
+<li><p>typedef  仅仅用来代替已有的类型名  非 增加新的类型</p>
+</li>
+<li></li>
+</ol>
+<ul>
+<li>默认float小数点后有效精度6位</li>
+<li>默认double小数点后有效精度16位置</li>
+<li>不管输出格式是 %f 或 lf% 均如此。</li>
+</ul>
+<ol start="38">
+<li></li>
+</ol>
+<ul>
+<li>自动变量（auto）、静态变量（static）、外部变量（extern)以及寄存器变量（register）</li>
+<li><a href="https://wenku.baidu.com/view/c583aa1deef9aef8941ea76e58fafab069dc449e.html" target="_blank" rel="noopener">在C语言中，函数的隐含存储类别是</a></li>
+<li>C语言规定，只要在定义函数时不进行存储类型的显式说明，函数的存储类型就隐含为外部类型，即extern型，外部类型允许其他文件中的函数调用。</li>
+<li>C语言中提供了存储说明符auto，register，extern，static说明的四种存储类别。四种存储类别说明符有两种存储期：自动存储期和静态存储期。其中auto和register对应自动存储期。具有自动存储期的变量在进入声明该变量的程序块是被建立，它在该程序块活动时存在，退出该程序块时撤销。</li>
+</ul>
+<ol start="39">
+<li><p>实参传递到形参 利用地址传递  形参改变影响实参</p>
+</li>
+<li><p>串的长度指的是  串中的字符的个数， 且其字符个数可以为零</p>
+</li>
+<li></li>
+</ol>
+<ul>
+<li>数据类型</li>
+<li>整型、实型、字符型</li>
+<li>实型数据</li>
+<li>单精度型、双精度型</li>
+</ul>
+<ol start="42">
+<li><p>整型数组只能一个一个地输入或输出，字符型数组中可以对字符串整体地输入与输出</p>
+</li>
+<li></li>
+</ol>
+<ul>
+<li>C 语言中，文件型指针变量的定义形式为： FILE *文件型指针名；  用户可以用FILE这个自定义的用户类型符来定义结构型的指针变量，专用于文件处理。FILE定义的变量必须是数组或指针</li>
+<li>C语言中对二进制文件的访问速度比文本文件快</li>
+<li>C语言中，随机文件以二进制代码形式存储数据</li>
+<li>C语言中的文本文件以ASCII码形式存储数据</li>
+</ul>
+<ol start="44">
+<li>#define和printf都是不是C语言语句</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>C语言9种控制语句</th>
+<th>C语言9种控制语句</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>if( )~else</td>
+<td>条件语句</td>
+</tr>
+<tr>
+<td>for( )~</td>
+<td>循环语句</td>
+</tr>
+<tr>
+<td>while( )~</td>
+<td>循环语句</td>
+</tr>
+<tr>
+<td>do~while( )</td>
+<td>循环语句</td>
+</tr>
+<tr>
+<td>continue</td>
+<td>结束本次循环语句</td>
+</tr>
+<tr>
+<td>break</td>
+<td>中止执行switch或循环语句          </td>
+</tr>
+<tr>
+<td>switch</td>
+<td>多分支选择语句          </td>
+</tr>
+<tr>
+<td>goto</td>
+<td>转向语句          </td>
+</tr>
+<tr>
+<td>return</td>
+<td>从函数返回语句      </td>
+</tr>
+</tbody>
+</table>
+<p>C语句可分为五类：1.表达式语句；2.函数调用语句；3.控制语句；4.复合语句；5.空语句。</p>
 
       
     </div>
@@ -494,7 +696,7 @@
   <p><span>本文标题:</span><a href="/2018/06/24/cComprehend/">C 语言基础——个人理解版</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 咚咚锵 的个人博客">咚咚锵</a></p>
   <p><span>发布时间:</span>2018年06月24日 - 19:06</p>
-  <p><span>最后更新:</span>2018年06月25日 - 00:06</p>
+  <p><span>最后更新:</span>2018年06月26日 - 00:06</p>
   <p><span>原始链接:</span><a href="/2018/06/24/cComprehend/" title="C 语言基础——个人理解版">http://yoursite.com/2018/06/24/cComprehend/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/06/24/cComprehend/"  aria-label="复制成功！"></i></span>
   </p>
