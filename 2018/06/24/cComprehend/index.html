@@ -87,10 +87,13 @@
 <meta property="og:site_name" content="咚咚锵的蜕变痕迹">
 <meta property="og:description" content="C 语言基础——个人理解版 C程序 只有一个main  从main start  从 main end  e 前面必须有数字  后面必须为整数  栗子：int a = 2e4;  ‘’  只能放一个字符       C中没有 JAVA中的String 字符串只能用字符数组来储存  外部变量 编译后会分配永久内存  外部变量 ！ 自动存储类别 存储类型  局部变量和外部变量  复合语句中的变量  相">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-25T16:31:14.689Z">
+<meta property="og:image" content="http://pav8z55tx.bkt.clouddn.com/4a36acaf2edda3cc8406f6a504e93901203f9251.jpg">
+<meta property="og:image" content="http://pav8z55tx.bkt.clouddn.com/DP%7B%25YLX%5B4%7D%5BF%7BD76ZND60%7BI.png">
+<meta property="og:updated_time" content="2018-06-26T14:59:31.504Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C 语言基础——个人理解版">
 <meta name="twitter:description" content="C 语言基础——个人理解版 C程序 只有一个main  从main start  从 main end  e 前面必须有数字  后面必须为整数  栗子：int a = 2e4;  ‘’  只能放一个字符       C中没有 JAVA中的String 字符串只能用字符数组来储存  外部变量 编译后会分配永久内存  外部变量 ！ 自动存储类别 存储类型  局部变量和外部变量  复合语句中的变量  相">
+<meta name="twitter:image" content="http://pav8z55tx.bkt.clouddn.com/4a36acaf2edda3cc8406f6a504e93901203f9251.jpg">
 
 
 
@@ -387,7 +390,7 @@
 <tr>
 <td>char*（指针变量）</td>
 <td>2</td>
-<td>4</td>
+<td>4（32位的寻址空间是2^32,即32个bit，也就是4个字节。同理64位编译器）</td>
 <td>8 </td>
 </tr>
 <tr>
@@ -399,13 +402,13 @@
 <tr>
 <td>int（带符号整型）</td>
 <td>2</td>
-<td>4</td>
+<td>4(16位机是2B，32位/64位是4B)</td>
 <td>4</td>
 </tr>
 <tr>
 <td>unsigned int （无符号整型）</td>
 <td>2</td>
-<td>4</td>
+<td>4(16位机是2B，32位/64位是4B)</td>
 <td>4</td>
 </tr>
 <tr>
@@ -423,7 +426,7 @@
 <tr>
 <td>long（长整形）</td>
 <td>4</td>
-<td>4</td>
+<td>4(16位机/32位是4B，64位是8B)</td>
 <td>8</td>
 </tr>
 <tr>
@@ -435,7 +438,7 @@
 <tr>
 <td>unsigned long（无符号长整型）</td>
 <td>4</td>
-<td>4</td>
+<td>4(16位机/32位是4B，64位是8B)</td>
 <td>8</td>
 </tr>
 </tbody>
@@ -670,6 +673,236 @@
 </tbody>
 </table>
 <p>C语句可分为五类：1.表达式语句；2.函数调用语句；3.控制语句；4.复合语句；5.空语句。</p>
+<ol start="45">
+<li><p>实参传递给形参  地址传递影响   数值传递不影响</p>
+</li>
+<li><p>scanf函数中可以用%3d等形式指定输入数据占的宽度，scanf函数中的字符串必须原样输入才可以正确赋值。不可以实数指定小数位的宽度，输入项是地址表达式<a href="https://zhidao.baidu.com/question/176682392340117724.html" target="_blank" rel="noopener">scanf函数</a></p>
+</li>
+<li><p>switch  使用注意事项</p>
+</li>
+</ol>
+<p>switch语句的表达式类型</p>
+<ul>
+<li>可以放一个整型的变量 int num = 10;switch (num)</li>
+<li>可以放一个整形常量  switch (10)</li>
+<li>可以放一个返回值是整型的表达式   switch (5+5),num = 5+5</li>
+<li>还可以放可以转换为int类型的表达式 switch (‘a’)   case 97:</li>
+<li><p>case  使用注意事项</p>
+</li>
+<li><p>case语句可以有多个</p>
+</li>
+<li>case语句格式： case  常量表达式: (空格和冒号不能省)</li>
+<li>可以是常量  case 10:</li>
+<li>如果放表达式，那么只可以是常量表达式 case 5+5:</li>
+<li>default语句的位置可以任意放</li>
+<li>case的穿透问题，同样适用于 default</li>
+<li>如果default语句放到 switch语句的最后，可以不加break如果不是放到最后，是必须加上break的</li>
+<li>case 后面不能是实数  （单精度，双精度都不可以）</li>
+<li>case 语句之后，默认的第一句话不能定义定义变量如果第一句话非要定义，应该加上大括号</li>
+<li><a href="https://blog.csdn.net/u013977285/article/details/47453159" target="_blank" rel="noopener">C语言-Switch 和case 的使用注意事项以及穿透效果的使用</a></li>
+</ul>
+<ol start="48">
+<li></li>
+</ol>
+<ul>
+<li>break    语句是限定转向语句，它使流程跳出所在的结构，把流程转向所在结构之后。 </li>
+<li>continue 语句被称为继续语句。该语句的功能是使本次循环提前结束， 即跳过循环体中 continue 语句后面尚未执行的循环体语句，继续进行下一次循环的条件判别。</li>
+</ul>
+<ol start="49">
+<li></li>
+</ol>
+<ul>
+<li>一个程序必须有一个 main（）函数</li>
+<li>其文件就不一定要有一个 main（）函数，因为其可以通过链接来实现多个子函数放到这个主函数中</li>
+<li>主函数的位置是不固定的，可以根据自己的爱好和习惯来使用，在 C语言中任何函数都不能调用主函数，且与函数的位置有关</li>
+<li>在 C 程序的函数中不能定义另一个函数。</li>
+</ul>
+<ol start="50">
+<li><p>fwrite  按二进制写入 数据到文件</p>
+</li>
+<li><p>指令序列称为 C 源程序，源程序文件的后缀为“ . c”。而目标程序为“ . obj” 源程序编译后变为“ . obj”，可执行程序为“ . exe”  编译后连接变为“ . exe”</p>
+</li>
+<li><p>标识符只能由 字母 , 数字 , 下划线组成, 且第一个字符必须为字母或下划线.</p>
+</li>
+<li><p>必须以 main 作为主函数名。 程序要从 main（）函数开始执行，最后在 main（）函数中结束</p>
+</li>
+<li></li>
+</ol>
+<ul>
+<li>赋值运算符左侧只能是变量，而不能是常量或者表达式。右侧可以是表达式包括赋值表达式。规定最左边变量所得到的新值，就是整个赋值表达式的值，</li>
+<li>如果赋值运算符的两侧类型不一致，在赋值前系统将自动先把右边的表达式所求得的数值按赋值号左侧变量的类型进行转换，</li>
+</ul>
+<ol start="55">
+<li><p><a href="https://blog.csdn.net/gujintong1110/article/details/23128269" target="_blank" rel="noopener">实参和其对应的形参各占用独立的存储单元？</a>实参和形参是各占独立存储空间，函数调用过程中，实参向形参拷贝复制值。实参是个变量，形参也是个变量。如果占用同一片空间的话，编译时候就不存在实参形参类型不匹配的报错参数传递中，形参值的改变不影响实参的值。so  实参单元与形参单元在内存中分配不同的存储单元。</p>
+</li>
+<li><p>一个 C 语言源程序文件中所定义的全局变量， 其作用域为：由具体定义位置和 extern 说明来决定范围</p>
+</li>
+<li><p><a href="https://blog.csdn.net/magoyang/article/details/52106723" target="_blank" rel="noopener">c程序的编译&amp;条件编译 （预处理阶段）</a><br><a href="https://blog.csdn.net/wujinzi_ujn/article/details/6899517" target="_blank" rel="noopener">c进行预处理、编译、连接、运行是做什么</a></p>
+</li>
+</ol>
+<ul>
+<li>编译预处理命令的特点有：</li>
+<li>①为了区分一般的语句，预处理命令行都必须以#开始，结尾不加分号；</li>
+<li>②预处理命令可以放在程序中的任意位置；</li>
+<li>③在程序中凡是以#开始的语句都是预处理命令行。</li>
+</ul>
+<ol start="58">
+<li><p>typedef 仅仅用来代替已有的类型名 非 增加新的类型</p>
+</li>
+<li></li>
+</ol>
+<ul>
+<li>共用体变量中的所有成员共享一段公共存储区</li>
+<li>所有成员的首地址相同</li>
+<li>在每一个时刻所有的成员中只有一个有效，即只有最后一个被赋值的成员有效，其余的成员无效。</li>
+</ul>
+<ol start="60">
+<li></li>
+</ol>
+<ul>
+<li>C语言的注释可以出现在程序的任何位置；C语言的语法限制不严格,可以多条语句放在同一行上，也可以将一条语句写在多行</li>
+<li>因为用C语言编写的程序可以放在不同的文件中，文件之间使用预处理命令进行调用</li>
+</ul>
+<ol start="61">
+<li><p>标识符只能由数字、字母和下划线组成，并且只能以字母和下划线开头。</p>
+</li>
+<li></li>
+</ol>
+<ul>
+<li>在用基本输出语句 printf 时，格式说明与输出项的个数应该相同</li>
+<li>若 格式说明 大于 输出项  则对于多余的格式项输出 随机值 或 0</li>
+<li>若 格式说明 小于 输出项  则多余的输出项不予输出</li>
+<li>不报错</li>
+</ul>
+<ol start="63">
+<li><p>二维数组定义和初始化允许省略行下标， 不允许省略列下标</p>
+</li>
+<li><p>C语言在编译前由预处理器对预处理命令进行处理，编译时进行语法分析。</p>
+</li>
+<li></li>
+</ol>
+<ul>
+<li>gets和getchar函数用于从标准输入设备终端读入字符串和字符，并非从磁盘文件读入</li>
+<li>fputs函数用于把字符串输出到文件</li>
+<li>fwrite函数用于以二进制形式输出数据到文件</li>
+<li><a href="https://blog.csdn.net/ljd_1986413/article/details/8778708" target="_blank" rel="noopener">c 函数fopen,fwrite,fread,fgets,fputs</a></li>
+</ul>
+<ol start="66">
+<li></li>
+</ol>
+<ul>
+<li><a href="https://blog.csdn.net/guosir_/article/details/78648632" target="_blank" rel="noopener">C语言动态变量和静态变量的区别</a></li>
+<li><a href="https://blog.csdn.net/qmhlan/article/details/6629360/" target="_blank" rel="noopener">浅析c语言中的变量(局部变量，外部变量，静态变量，寄存器变量）</a></li>
+<li><a href="http://blog.sina.com.cn/s/blog_6a95e00b0100zwfb.html" target="_blank" rel="noopener">C中静态变量与寄存器变量 </a></li>
+<li>动态变量和静态变量都是内存变量，而寄存器变量不保存在内存上，而是直接存储在 CPU 的寄存器中。</li>
+<li>变量的存储类别有自动、静态、寄存器、外部。</li>
+</ul>
+<ol start="67">
+<li></li>
+</ol>
+<ul>
+<li>函数是C源程序的基本模块， 通过对函数模块的调用实现特定的功能。</li>
+<li>函数按照来源可大体分为：库函数和自定义函数，库函数，由C系统提供，用户无须定义，也不必在程序中作类型说明，只需在程序前包含有该函数原型的头文件即可在程序中直接调用。</li>
+<li>自定义函数，由用户按需要写的函数，用户将程序按照功能块划分（为OOAD的面向对象的划分），根不同的功能定义函数，实现此功能。</li>
+<li>C 语言的源程序是由函数构成的，其基本单位是函数，每一个函数完成相对独立的功能， 其中至少包括一个主函数 main</li>
+<li>C 语言的书写格式自由，一行可写多条语句，一条语句也可写在不同行上</li>
+<li>C 语言规定每个语句以分号结束。 可随时添加注释，对程序没影响。</li>
+</ul>
+<ol start="68">
+<li></li>
+</ol>
+<ul>
+<li>高级语言编写的程序称为“源程序”</li>
+<li>由二进制代码表示的程序称为“目标程序” </li>
+<li>由汇编语言编写的程序称为“汇编程序”</li>
+<li>对于计算机本身来说，它只能接收和处理由 0 到 1 的代码构成的二进制指令和数据。 所以计算机能识别的程序是 “目标程序”</li>
+<li>而计算机可以直接执行的是可执行程序，即后缀为. exe的程序。<br>语言中的编辑，编译，连接，运行</li>
+<li>编辑指的是编写代码</li>
+<li>编译指的是将c或者cpp文件编译成obj文件   编译，就是将已经编辑好的源程序翻译成二进制的目标代码，经编译后得到的二进制代码还不能直接执行，因为每一个模块往往是单独编译的，必须把经过编译的各个模块的目标代码与系统提供的标准模块连接才能运行；</li>
+<li>连接指的是将obj文件生成为exe文件       连接，将各模块的二进制目标代码与系统标准模块经连接处理后，得到具有绝对地址的可执行文件，它是计算机能直接执行的文件</li>
+<li>运行就是执行exe文件  执行，执行一个经过编译和连接的可执行的目标文件。<br><img src="http://pav8z55tx.bkt.clouddn.com/4a36acaf2edda3cc8406f6a504e93901203f9251.jpg" alt="C过程"></li>
+</ul>
+<p>C语言中的obj</p>
+<ul>
+<li>obj文件是目标文件，一般是程序编译后的二进制文件，在通过链接器和资源文件链接就成exe文件了。</li>
+<li>OBJ只给出了程序的相对地址，而EXE是绝对地址。</li>
+<li>OBJ文件不支持有孔的多边形面。</li>
+</ul>
+<p>69.</p>
+<ul>
+<li>c源程序不能表示的数制是 二进制</li>
+<li>在 C 语言中，所有的数值型常量都带有符号，所以整型数量只区别整型和长整型两种形式，整型常量和长整型常量均可用十进制、八进制、十六进制 3种形式表示。</li>
+</ul>
+<ol start="70">
+<li></li>
+</ol>
+<ul>
+<li>宏名没有    大小写限制</li>
+<li>宏定义没有  放置位置限制   其有效范围是从定义开始到文件结束</li>
+<li>宏代换可以代替任何数据类型，不受数据类型的限制</li>
+<li>函数 影响运行时间</li>
+<li>宏调用影响编译时间 </li>
+</ul>
+<ol start="71">
+<li><p>字符数组可以只存放普通字符，不存放字符串。此时该字符数组没有存放结束标志‘ \0’。</p>
+</li>
+<li></li>
+</ol>
+<ul>
+<li>文件有二进制文件和文本文件，里面的数据与类型无关</li>
+<li>文件由 数据序列 组成，可以构成二进制文件或文本文件。</li>
+</ul>
+<h1 id="c语言易错基础知识个人理解"><a href="#c语言易错基础知识个人理解" class="headerlink" title="c语言易错基础知识个人理解"></a>c语言易错基础知识个人理解</h1><ol>
+<li></li>
+</ol>
+<ul>
+<li><a href="https://blog.csdn.net/linuxheik/article/details/8607603" target="_blank" rel="noopener">浅谈从源代码文件到二进制可执行文件的过程</a></li>
+<li>语言经过编译，形成一个.obj的目标文件，再经过连接，形成一个.exe的可执行文件，是一个二进制机器指令文件</li>
+</ul>
+<ol start="2">
+<li><p>C语言编写的程序称为源程序,它以ASCII代码形式存放在一个文本文件中（扩展名为.c的文本文件）</p>
+</li>
+<li><p>在C语言里，整数有三种表示形式：十进制，八进制，十六进制</p>
+</li>
+</ol>
+<ul>
+<li>八进制：以0开头，由0~7组成的数。如，0126,050000.</li>
+<li>十进制：除表示正负的符号外，以1~9开头，由0~9组成。如，128，+234，-278。</li>
+<li>十六进制：以0X或0x开头，由0~9，A~F或a~f 组成。如，0x12A,0x5a000.</li>
+</ul>
+<ol start="4">
+<li><p>E前E后必有数,E后必须为整数 </p>
+</li>
+<li><p>exp(x)代表e的x次方    e是一个常数，等于2.718281828…</p>
+</li>
+<li></li>
+</ol>
+<ul>
+<li>要加入头文件 math.h </li>
+<li>pow(x,y);//其作用是计算x的y次方。x、y及函数值都是double型 </li>
+<li>pow函数返回值类型是double类型</li>
+</ul>
+<ol start="7">
+<li><p>fabs()代表取绝对值</p>
+</li>
+<li><p>%左右参与运算的变量均为整形 不能为浮点型。</p>
+</li>
+<li><p>类型| 16位| 32 位| 64位<br>—|—|—|—<br>char（字符类型） | 1 | 1 | 1<br>char*（指针变量） | 2 | 4（32位的寻址空间是2^32,即32个bit，也就是4个字节。同理64位编译器） | 8<br>short int（带符号短整型） | 2 | 2 | 2<br>int（带符号整型） | 2 | 4(16位机是2B，32位/64位是4B) | 4<br>unsigned int （无符号整型） | 2 | 4(16位机是2B，32位/64位是4B) | 4<br>float（单精度型/浮点型） | 4 | 4 | 4<br>double（双精度型）| 8 | 8 | 8<br>long（长整形） | 4 | 4(16位机/32位是4B，64位是8B) | 8<br>long long | 8 | 8 | 8<br>unsigned long（无符号长整型） | 4 | 4(16位机/32位是4B，64位是8B) | 8</p>
+</li>
+</ol>
+<ol start="10">
+<li><p>static变量是静态变量，在语句块执行期间，static变量赋初值语句执行一次<br><a href="https://blog.csdn.net/nihaixiao/article/details/52066909" target="_blank" rel="noopener">静态变量赋初值只在函数第一次调用时起作用，若没有赋初值，系统自动赋0</a><br><img src="http://pav8z55tx.bkt.clouddn.com/DP%7B%25YLX%5B4%7D%5BF%7BD76ZND60%7BI.png" alt="静态变量赋初值"></p>
+</li>
+<li><p>在c语言中，只有在使用时才占用内存单元的变量，其存储类型是auto和register</p>
+</li>
+</ol>
+<ul>
+<li>全局变量(extern)一经定义，系统为其分配固定的内存单元；</li>
+<li>静态变量(static)，编译系统为其分配固定的存储空间；</li>
+<li>动态变量(auto)存储在内在中的动态存储区，只在程序运行中，系统才临时给变量分配内存单元；</li>
+<li>寄存器变量(register)不保存在内存上，而是直接存储在CPU的寄存器中。</li>
+</ul>
+<p>12.位运算中，^是不同才为一，|是有一就是一，&amp;是相同才是一<br><a href="https://baike.baidu.com/item/%E4%BD%8D%E8%BF%90%E7%AE%97/6888804?fr=aladdin" target="_blank" rel="noopener">位运算</a><a href="https://blog.csdn.net/fox64194167/article/details/20692645" target="_blank" rel="noopener">来谈谈C++ 位运算 &amp; | &lt;&lt; &gt;&gt; ^ ~ %</a></p>
 
       
     </div>
@@ -696,7 +929,7 @@
   <p><span>本文标题:</span><a href="/2018/06/24/cComprehend/">C 语言基础——个人理解版</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 咚咚锵 的个人博客">咚咚锵</a></p>
   <p><span>发布时间:</span>2018年06月24日 - 19:06</p>
-  <p><span>最后更新:</span>2018年06月26日 - 00:06</p>
+  <p><span>最后更新:</span>2018年06月26日 - 22:06</p>
   <p><span>原始链接:</span><a href="/2018/06/24/cComprehend/" title="C 语言基础——个人理解版">http://yoursite.com/2018/06/24/cComprehend/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/06/24/cComprehend/"  aria-label="复制成功！"></i></span>
   </p>
@@ -898,7 +1131,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C-语言基础——个人理解版"><span class="nav-number">1.</span> <span class="nav-text">C 语言基础——个人理解版</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C-语言基础——个人理解版"><span class="nav-number">1.</span> <span class="nav-text">C 语言基础——个人理解版</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#c语言易错基础知识个人理解"><span class="nav-number">2.</span> <span class="nav-text">c语言易错基础知识个人理解</span></a></li></ol></div>
             
 
           </div>
