@@ -89,7 +89,9 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://pav8z55tx.bkt.clouddn.com/4a36acaf2edda3cc8406f6a504e93901203f9251.jpg">
 <meta property="og:image" content="http://pav8z55tx.bkt.clouddn.com/DP%7B%25YLX%5B4%7D%5BF%7BD76ZND60%7BI.png">
-<meta property="og:updated_time" content="2018-06-26T14:59:31.504Z">
+<meta property="og:image" content="http://pav8z55tx.bkt.clouddn.com/3b292df5e0fe99251b88b53b3da85edf8cb171d1.jpg">
+<meta property="og:image" content="http://pav8z55tx.bkt.clouddn.com/3b292df5e0fe99251b88b53b3da85edf8cb171d1.jpg">
+<meta property="og:updated_time" content="2018-06-28T16:27:02.153Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C 语言基础——个人理解版">
 <meta name="twitter:description" content="C 语言基础——个人理解版 C程序 只有一个main  从main start  从 main end  e 前面必须有数字  后面必须为整数  栗子：int a = 2e4;  ‘’  只能放一个字符       C中没有 JAVA中的String 字符串只能用字符数组来储存  外部变量 编译后会分配永久内存  外部变量 ！ 自动存储类别 存储类型  局部变量和外部变量  复合语句中的变量  相">
@@ -902,7 +904,156 @@
 <li>动态变量(auto)存储在内在中的动态存储区，只在程序运行中，系统才临时给变量分配内存单元；</li>
 <li>寄存器变量(register)不保存在内存上，而是直接存储在CPU的寄存器中。</li>
 </ul>
-<p>12.位运算中，^是不同才为一，|是有一就是一，&amp;是相同才是一<br><a href="https://baike.baidu.com/item/%E4%BD%8D%E8%BF%90%E7%AE%97/6888804?fr=aladdin" target="_blank" rel="noopener">位运算</a><a href="https://blog.csdn.net/fox64194167/article/details/20692645" target="_blank" rel="noopener">来谈谈C++ 位运算 &amp; | &lt;&lt; &gt;&gt; ^ ~ %</a></p>
+<p>12.位运算中，^是不同才为一，|是有一就是一，&amp;是相同才是一<br><a href="https://baike.baidu.com/item/%E4%BD%8D%E8%BF%90%E7%AE%97/6888804?fr=aladdin" target="_blank" rel="noopener">位运算</a><a href="https://blog.csdn.net/fox64194167/article/details/20692645" target="_blank" rel="noopener">来谈谈C++ 位运算 &amp; | &lt;&lt; &gt;&gt; ^ ~ %</a> （不懂）</p>
+<ol start="13">
+<li><p>条件表达式：x=表达式1？表达式2：表达式3；当表达式1为非0时，x=表达式2，当表达式1为0时，x=表达式3。</p>
+</li>
+<li><p>switch()后不能加分号，括号中不能用浮点型，long型，字符串。</p>
+</li>
+<li><p>switch()运算中即使没有break，也只是按顺序执行一次，并不会执行完一次后从头开始循环。</p>
+</li>
+<li><p>.在一个c源程序文件中所定义的全局变量，其   作用域为由具体定义位置和extern说明来决定范围。</p>
+</li>
+<li><p>c语言源程序不能表示的数制是二进制。</p>
+</li>
+<li><p>关于scanf输入空格，当为%d或%s时，不可读取空格，遇到空格结束输入，当为%c时，可读取空格作为字符。</p>
+</li>
+<li><p>字符指针：char *s；s=“hello”；是正确的定义赋值方式，不可加大括号</p>
+</li>
+<li><p>字符数组必须定义时立即赋值，并且加或不加大括号都可以。 （需要研究）</p>
+</li>
+</ol>
+<ul>
+<li>注意：不能先定义再给它赋值，如char a[10]; a[10]=”hello”;这样是错误的！</li>
+<li><a href="https://blog.csdn.net/guima005/article/details/78670223" target="_blank" rel="noopener">C语言可以给字符数组赋值的方法</a></li>
+<li><a href="https://blog.csdn.net/cherishinging/article/details/67634393" target="_blank" rel="noopener">如何给给字符数组赋值</a></li>
+</ul>
+<ol start="21">
+<li></li>
+<li></li>
+</ol>
+<ul>
+<li>1 没有类型限制，宏替换只是单纯代码文本的替换，不会检测类型。</li>
+<li>2 所谓“宏调用”实际上是在编译阶段将代码替换，在编译完成之后，程序执行时，不存在宏调用的步骤，函数调用是在程序执行时实际调用的，两者没有可比性。</li>
+<li>3 宏展开不占运行时间，只占编译时间。</li>
+</ul>
+<ol start="23">
+<li><p>“\007”属于合法常量 <a href="https://www.ggdoc.com/Y_ivreiogOWQiOazleW4uOmHjw2/Mzk2ZjY1NjViNWRhYTU4ZGEwMTE2YzE3NWYwZTdjZDE4NDI1MThjNw2/" target="_blank" rel="noopener">二级C语言专题探究——常量</a><img src="http://pav8z55tx.bkt.clouddn.com/3b292df5e0fe99251b88b53b3da85edf8cb171d1.jpg" alt="合法常量">  （需要研究）</p>
+</li>
+<li><p>若有以下函数首部int fun(double x[10],int n);则对此函数的函数声明语句是int fun(double <em>,int </em>);</p>
+</li>
+</ol>
+<ul>
+<li>函数声明的一般形式为：</li>
+<li>函数类型　函数名(参数类型1 [,参数名1] ,参数类型2[,参数名2]……);</li>
+<li>其中，参数名可以省略。本题中的fun函数有两个参数，一个类型是double型的一维数组，另一个是int型的指针。而在C语言中，一维数组用作函数参数和该数组元素的指针类型是等价的</li>
+<li><a href="https://zhidao.baidu.com/question/137062892.html" target="_blank" rel="noopener">若有以下函数首部</a></li>
+</ul>
+<ol start="25">
+<li></li>
+<li></li>
+</ol>
+<ul>
+<li>gets函数用于从终端读入字符串。</li>
+<li>getchar是用于从终端读入字符。</li>
+</ul>
+<ol start="27">
+<li></li>
+</ol>
+<ul>
+<li>C语言中既没有逻辑类型也没有集合类型</li>
+<li>在C++和VB里有逻辑类型，C++中为bool，VB中为 Boolean。其值有true和 false两种，true代表真，false代表假。</li>
+<li>C语言没有逻辑类型，如果要表示逻辑类型，只能用整型值代替。0代表false，非0代表true。</li>
+<li>集合是一种元素间无序的类型。C语言没有集合类型。</li>
+<li>（注意：数组不算集合类型，因为数组元素之间有前驱和后继关系。）</li>
+</ul>
+<ol start="28">
+<li><p>形式参数调用动态存储方式，不是静态变量所以不能用static声明  <a href="https://www.imooc.com/qadetail/99429" target="_blank" rel="noopener">C程序函数的形式参数不可以说明为static型变量</a></p>
+</li>
+<li><p>执行for循环，先进入表达式1初始化，再经过表达式2判断，为真进入循环体</p>
+</li>
+<li><p>函数feof(fp)读取到文件末尾，遇文件结束符，返回为非0值，若未结束则为0。</p>
+</li>
+<li><p>预处理命令是在程序正式编译前被处理的<a href="https://www.cnblogs.com/clover-toeic/p/3851102.html" target="_blank" rel="noopener">C语言预处理命令详解</a></p>
+</li>
+<li><p>源程序中凡是以#开始的控制行都是预处理命令</p>
+</li>
+<li><p>一行上只能由一条有效的预处理命令</p>
+</li>
+<li><p>转义字符包括\a(响铃),\b(退格),\f(换页),\n(换行),\r(回车，光标回到本行开头),\v(垂直制表),\xdd(1到2位十六进制),\ddd(1到2位八进制)。<br><img src="http://pav8z55tx.bkt.clouddn.com/3b292df5e0fe99251b88b53b3da85edf8cb171d1.jpg" alt="合法常量"> </p>
+</li>
+<li><p>未经赋值的auto，register变量值不确定，未经赋值的全局变量，静态局部变量值为0</p>
+</li>
+<li><p>void fun(float array[],int <em>ptr)；函数参数array，ptr都是指针变量。 函数声明可以void fun(float </em>,int *)；</p>
+</li>
+<li><p>字符串比较函数，str(c1,c2);c1&lt;c2,为负值，c1&gt;c2,为正值，c1=c2,为0。</p>
+</li>
+</ol>
+<ul>
+<li>strcmp()</li>
+<li>此函数的函数原型为 int strcmp(const char <em>str1, const char </em>str2).</li>
+<li>功能为比较两个字符串。</li>
+<li>当str1指向的字符串大于str2指向的字符串时，返回正数。</li>
+<li>当str1指向的字符串等于str2指向的字符串时，返回0。</li>
+<li>当str1指向的字符串小于str2指向的字符串时，返回负数。</li>
+<li>str1.len-str.len</li>
+</ul>
+<ol start="38">
+<li><p>定义二维数组，行可以不写，列必须写</p>
+</li>
+<li></li>
+</ol>
+<ul>
+<li>if(表达式)，表达式可以是任意合法的数值</li>
+<li>可以是任意数值，但实际上编译系统会把这个表达式强制转成逻辑值，一般地false都为0；1或任何非零数值都是true，具体要看什么语言的。</li>
+<li>判断题</li>
+<li>1 if语句中的表达式不限于逻辑表达式，可以是任意的数值类型。 【 Y 】</li>
+<li>2 switch语句可以用if语句完全代替。                         【 Y 】</li>
+<li>3 switch语句的case表达式必须是常量表达式。                 【 Y 】</li>
+<li>4 if语句，switch语句可以嵌套，而且嵌套的层数没有限制。     【 Y 】</li>
+<li>5 在switch多分支中，break语句可使流程立即跳出switch语句体。【 Y 】</li>
+<li>6 switch语句的case分支可以使用{ }复合语句，多个语句序列。  【 Y 】</li>
+<li>7 switch语句的表达式与case表达式的类型必须一致。           【 Y 】</li>
+<li>8 多个case可以执行相同的程序段。                           【 Y 】</li>
+<li>9 内层break语句可以终止嵌套的switch，使最外层的switch结束。【 N 】</li>
+<li>10 条件表达式可以取代if语句，或者用if语句取代条件表达式。  【 N 】  (不清楚)</li>
+<li>11 switch语句的各个case和default的出现次序不影响执行结果。 【 N 】  (不清楚)</li>
+<li>12 if (a=&lt;b) x++;是合法的C语句。                           【 N 】  (不清楚)</li>
+<li>13 if必须有else与之配对。                                  【 N 】</li>
+</ul>
+<ol start="40">
+<li>c语言中scanf（“%2d%*2d%2d”，&amp;a，&amp;b）；若要输入123456789  则 a=12,b=56;</li>
+</ol>
+<ul>
+<li>%2d 读1个2位整型数 存入a</li>
+<li>%*2d – 跳过输入流中的 1个2位整型数.</li>
+<li>%2d读1个2位整型数 存入b</li>
+</ul>
+<ol start="41">
+<li><a href="https://blog.csdn.net/k346k346/article/details/52252626" target="_blank" rel="noopener">printf()详解之终极无惑</a><br>printf()中，%2d代表输出的数值占2位，若是数值少于两位，用空格代替，若是数值多于两位，照常输出</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">printf(&quot;%2d&quot;, 12);     // 输出12</span><br><span class="line">printf(&quot;%2d&quot;, 1);      // 输出 _1  (_代表空格)</span><br><span class="line">printf(&quot;%2d&quot;, 122);    // 输出122</span><br><span class="line">printf(&quot;%2d&quot;, 12.72);  // 输出12   (强制类型转换，即取整数部分)</span><br></pre></td></tr></table></figure>
+<ol start="42">
+<li><p>在c语言中，程序的模块化是利用函数实现的</p>
+</li>
+<li><p>c语言文件是由数据列组成，可以构成二进制文件或文本文件</p>
+</li>
+<li><p>结构体中当成员为数组时，不能用数组名直接赋值，应该写出确切的下标。<br>数组名是个静态地址值，不能被修改，如果想把数据存储到其中，可以用memcpy（）函数进行内存拷贝，或采用循环进行赋值</p>
+</li>
+<li><p>字符数组只有在初始化的时候整体赋值，否则只能对字符数组逐个赋值</p>
+</li>
+<li><p>定义二维数组时。如果第一维的长度没有指定，则定义的同时需要完成初始化。</p>
+</li>
+<li></li>
+</ol>
+<ul>
+<li>标识符分为    关键字、预定义标识符、用户标识符。</li>
+<li>关键字不可以作为用户标识符；</li>
+<li>预定义标识符可以用作用户标识符，原来的预定义标识符将会被用户标识符覆盖，预定义标识符的原意失效；</li>
+<li>用户标识符与预定义标识符同名时，可能会导致运行错误。</li>
+<li>用户标识符不能以数字开头</li>
+<li>C语言中标识符是区分大小写的</li>
+</ul>
 
       
     </div>
@@ -929,7 +1080,7 @@
   <p><span>本文标题:</span><a href="/2018/06/24/cComprehend/">C 语言基础——个人理解版</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 咚咚锵 的个人博客">咚咚锵</a></p>
   <p><span>发布时间:</span>2018年06月24日 - 19:06</p>
-  <p><span>最后更新:</span>2018年06月26日 - 22:06</p>
+  <p><span>最后更新:</span>2018年06月29日 - 00:06</p>
   <p><span>原始链接:</span><a href="/2018/06/24/cComprehend/" title="C 语言基础——个人理解版">http://yoursite.com/2018/06/24/cComprehend/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/06/24/cComprehend/"  aria-label="复制成功！"></i></span>
   </p>
